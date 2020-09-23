@@ -1,0 +1,11 @@
+.Background {
+    position: absolute;
+    background-color: rgba(209, 18, 18, 0.685);
+    background-size: cover;
+    left: 30%;
+    top: 30%;
+    margin: 10px;
+    padding: 60px;
+    border-radius: 10px;
+
+}

@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import RepositoryPage from"./components/RepositoryPage.js";
+import Home from"./components/Home.js";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <BrowserRouter history={history}>      
+        <Switch>
+          <Route exact path="/:id" component={RepositoryPage}/>
+          <Route path="/" component={Home}/>
+        </Switch>   
+      </BrowserRouter> 
+    </div>      
   );
 }
 
